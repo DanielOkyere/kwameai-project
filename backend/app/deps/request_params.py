@@ -5,7 +5,7 @@ from fastapi import Depends, HTTPException, Query
 from sqlalchemy import UnaryExpression, asc, desc
 
 from app.db import Base
-from app.models.item import Item
+from app.models.posts import Posts
 from app.schemas.request_params import RequestParams
 
 
@@ -47,4 +47,4 @@ def parse_react_admin_params(model: Type[Base]) -> Callable:
     return inner
 
 
-ItemRequestParams = Annotated[RequestParams, Depends(parse_react_admin_params(Item))]
+PostRequestParams = Annotated[RequestParams, Depends(parse_react_admin_params(Posts))]

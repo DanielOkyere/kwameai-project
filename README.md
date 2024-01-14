@@ -6,8 +6,6 @@
 - React Admin
 - SQLAlchemy and Alembic
 - Pre-commit hooks (black, autoflake, isort, flake8, prettier)
-- Github Action
-- Dependabot config
 - Docker images
 
 ## Good to know
