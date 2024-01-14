@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  backend:
+    image: "simpleblogcms-backend:latest"
+
+  frontend:
+    image: "simpleblogcms-frontend:latest"
