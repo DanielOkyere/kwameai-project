@@ -50,5 +50,17 @@ export interface UserUpdate {
      * @memberof UserUpdate
      */
     'is_verified'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserUpdate
+     */
+    'username'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserUpdate
+     */
+    'image'?: string;
 }
 

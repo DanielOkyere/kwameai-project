@@ -50,5 +50,11 @@ export interface UserCreate {
      * @memberof UserCreate
      */
     'is_verified'?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserCreate
+     */
+    'username': string;
 }
 

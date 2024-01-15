@@ -15,6 +15,6 @@
 
 
 export * from './api/auth-api';
-export * from './api/items-api';
+export * from './api/posts-api';
 export * from './api/users-api';
 
