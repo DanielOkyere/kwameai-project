@@ -10,7 +10,7 @@ from sqlalchemy.types import String
 from app.db import Base
 
 if TYPE_CHECKING:
-    from app.models.item import Item  # noqa: F401
+    from app.models.posts import Posts, Likes
 
 
 class User(SQLAlchemyBaseUserTableUUID, Base):
@@ -24,7 +24,8 @@ class User(SQLAlchemyBaseUserTableUUID, Base):
     )
     username: Mapped[str] = mapped_column(String(250), nullable=False, index=True)
     image: Mapped[str] = mapped_column(String(300), nullable=True)
-    posts: Mapped["Item"] = relationship(back_populates="user", cascade="all, delete")
+    posts: Mapped["Posts"] = relationship(back_populates="user", cascade="all, delete")
+    likes: Mapped["Likes"] = relationship(back_populates="user", cascade="all, delete")
 
     def __repr__(self):
         return f"User(id={self.id!r}, name={self.email!r})"

@@ -5,7 +5,7 @@ class Postcreate(BaseModel):
     title: str
     content: str
     published: bool
-    image: str
+    image: str | None
 
 
 class Postupdate(Postcreate):
