@@ -17,20 +17,32 @@
 /**
  * 
  * @export
- * @interface Item
+ * @interface Postcreate
  */
-export interface Item {
+export interface Postcreate {
     /**
      * 
      * @type {string}
-     * @memberof Item
+     * @memberof Postcreate
      */
-    'value': string;
+    'title': string;
     /**
      * 
-     * @type {number}
-     * @memberof Item
+     * @type {string}
+     * @memberof Postcreate
      */
-    'id': number;
+    'content': string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof Postcreate
+     */
+    'published': boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof Postcreate
+     */
+    'image'?: string;
 }
 

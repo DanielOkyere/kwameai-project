@@ -4,7 +4,7 @@ import { Admin, fetchUtils, Resource, CustomRoutes } from "react-admin";
 import { Route } from "react-router";
 import MyLayout from "./components/AdminLayout";
 import Dashboard from "./pages/Dashboard";
-import { ItemCreate, ItemEdit, ItemList } from "./pages/Items";
+import { PostCreate, PostEdit, PostList } from "./pages/posts"
 import LoginPage from "./pages/Login";
 import { ProfileEdit } from "./pages/ProfileEdit";
 import Register from "./pages/Register";
@@ -56,11 +56,11 @@ const App = () => {
           />
         ) : null,
         <Resource
-          name="items"
-          options={{ label: "Items" }}
-          list={ItemList}
-          edit={ItemEdit}
-          create={ItemCreate}
+          name="posts"
+          options={{ label: "Posts" }}
+          list={PostList}
+          edit={PostEdit}
+          create={PostCreate}
           icon={PostIcon}
         />,
       ]}
