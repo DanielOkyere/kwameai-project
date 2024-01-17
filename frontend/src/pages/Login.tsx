@@ -14,7 +14,7 @@ const Login = () => {
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
-    login({ email, password }, "/feed").catch((e) => {
+    login({ email, password }).catch((e) => {
       const msg = e.response?.data?.detail;
       if (msg) {
         notify(msg, { type: "error" });

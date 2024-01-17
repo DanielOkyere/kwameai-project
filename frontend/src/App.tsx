@@ -13,6 +13,7 @@ import authProvider from "./providers/authProvider";
 import { basePath } from "./providers/env";
 import PostIcon from "@mui/icons-material/PostAdd";
 import PersonIcon from "@mui/icons-material/Person";
+import FeedIcon from "@mui/icons-material/Feed"
 import FeedPage from "./pages/FeedPage";
 
 const httpClient = (url: string, options: any = {}) => {
@@ -40,7 +41,6 @@ const App = () => {
       layout={MyLayout}
     >
       <CustomRoutes>
-        <Route path="/feed" element={<FeedPage/>} />
         <Route path="/my-profile" element={<ProfileEdit />} />
       </CustomRoutes>
   
@@ -58,6 +58,12 @@ const App = () => {
             icon={PersonIcon}
           />
         ) : null,
+        <Resource
+          name="feeds"
+          options={{ label: "Feeds" }}
+          list={FeedPage}
+          icon={FeedIcon}
+        />,
         <Resource
           name="posts"
           options={{ label: "Posts" }}

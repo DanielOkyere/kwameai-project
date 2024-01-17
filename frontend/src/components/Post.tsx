@@ -10,13 +10,14 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-const Post = () => {
+const Post = (props: any) => {
+  const {data} = props;
   return (
     <Card sx={{ margin: 5 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
-            R
+            {data.title[0]}
           </Avatar>
         }
         action={
@@ -24,20 +25,18 @@ const Post = () => {
             <MoreVert />
           </IconButton>
         }
-        title="John Doe"
-        subheader="September 14, 2022"
+        title={data.title}
+        // subheader="September 14, 2022"
       />
       <CardMedia
         component="img"
         height="20%"
-        image="https://images.pexels.com/photos/4534200/pexels-photo-4534200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        image={data.image}
         alt="Paella dish"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
+          {data.content}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
