@@ -3,7 +3,7 @@ import simpleRestProvider from "ra-data-simple-rest";
 import { Admin, fetchUtils, Resource, CustomRoutes } from "react-admin";
 import { Route } from "react-router";
 import MyLayout from "./components/AdminLayout";
-import Dashboard from "./pages/Dashboard";
+// import Dashboard from "./pages/Dashboard";
 import { PostCreate, PostEdit, PostList } from "./pages/posts"
 import LoginPage from "./pages/Login";
 import { ProfileEdit } from "./pages/ProfileEdit";
@@ -13,6 +13,7 @@ import authProvider from "./providers/authProvider";
 import { basePath } from "./providers/env";
 import PostIcon from "@mui/icons-material/PostAdd";
 import PersonIcon from "@mui/icons-material/Person";
+import FeedPage from "./pages/FeedPage";
 
 const httpClient = (url: string, options: any = {}) => {
   options.user = {
@@ -37,11 +38,13 @@ const App = () => {
       loginPage={LoginPage}
       history={createHistory()}
       layout={MyLayout}
-      dashboard={Dashboard}
     >
       <CustomRoutes>
+        <Route path="/feed" element={<FeedPage/>} />
         <Route path="/my-profile" element={<ProfileEdit />} />
       </CustomRoutes>
+  
+  
       <CustomRoutes noLayout>
         <Route path="/register" element={<Register />} />
       </CustomRoutes>
